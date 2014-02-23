@@ -1,8 +1,11 @@
 'use strict'
 
 angular.module('lightboxApp')
-.controller 'ReviewsController', ($scope, review) ->
+.controller 'ReviewsController', ($scope, review, paramOptions) ->
   $scope.currentLightboxType = 'reviews'
 
-  review.for({}).then (data) ->
+  $scope.options = paramOptions
+
+  review.for($scope.options).then (data) ->
     $scope.reviews = data
+

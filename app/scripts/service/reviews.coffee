@@ -3,8 +3,13 @@ angular.module('lightboxApp')
   class Reviews
     constructor: (@$http) ->
     for: (options) =>
-      @$http.get('http://localhost:3000/v4/organisations;trkref=EBU/reviewables;locale=en-GB;sku=569109/reviews')
+      url = 'http://localhost:3000/v4/organisations;' +
+            options.organisations +
+            '/reviewables;' +
+            options.reviewables +
+            '/reviews'
+      @$http.get(url)
       .then (reviewable, status, headers, config) ->
-        return reviewable
+        return reviewable.data
 
 

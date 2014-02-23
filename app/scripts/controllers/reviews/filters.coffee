@@ -1,9 +1,11 @@
 'use strict'
 
 angular.module('lightboxApp')
-.controller 'FiltersController', ($scope, Product) ->
+.controller 'FiltersController', ($scope, product) ->
 
-  $scope.product = Product
+  product.for($scope.options)
+  .then (productData) ->
+    $scope.product = productData
 
 
 # Segment Filter

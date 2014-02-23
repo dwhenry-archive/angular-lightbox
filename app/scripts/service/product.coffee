@@ -1,36 +1,31 @@
-ProductData = (selector_options) ->
-  @data = {
-    name: 'Atlantis The Palm',
-    img: '//images.reevoo.com/retailer_products/1016001/1016001952/90x90.jpg?timestamp=1367484315',
-    score_image_offset: '-8690.0px',
-    overall_score: 8.8,
-    review_count: 1193
-  }
-
-angular.module('lightboxApp')
-.factory 'Product', () ->
-  new ProductData()
-
 
 angular.module('lightboxApp')
 .service 'product',
   class Product
-    constructor: (@reviews) ->
+    constructor: (@reviews, $q) ->
+      @defer = $q.defer()
+      @locale = 'en-GB'
     for: (options) =>
-      @reviews.for(options)
-      .then (reviewable) ->
-        return {
-          name: reviewable.parent.reviewable.name,
-          img: reviewable.parent.reviewable.image_url,
-          overall_score: @overall_score(reviewable.facets),
-          review_count: reviewable.locale_and_review_count[@locale]
+      _this = this
+      @reviews.for(options).then (reviewable) ->
+        overall_score = _this.overall_score(reviewable.summary.facets)
+        data = {
+          name: reviewable.summary.parent.reviewable.name,
+          img: reviewable.summary.parent.reviewable.image_url.replace(/images.dev/, 'images.reevoo.com'),
+          score_image_offset: _this.image_offset(overall_score),
+          overall_score: overall_score,
+          review_count: reviewable.summary.locale_and_review_count[_this.locale]
         }
+        _this.defer.resolve(data)
+      @defer.promise
 
     overall_score: (facets) ->
       filtered_facets = facets.filter (x) -> x.tag == 'overall'
       stats = filtered_facets[0].statistics
       stats.summation / stats.respondents
 
-    locale: () ->
-      'en-GB'
+    image_offset: (score) ->
+      (score * -600) + 540
+
+
 

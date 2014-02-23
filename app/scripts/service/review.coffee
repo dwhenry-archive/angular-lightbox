@@ -5,6 +5,6 @@ angular.module('lightboxApp')
     for: (options) =>
       @reviews.for(options)
       .then (reviewable) ->
-        return reviewable.data.reviews
+        return reviewable.reviews
 
 
