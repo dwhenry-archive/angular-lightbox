@@ -13,23 +13,5 @@
   <section class="pros-and-cons">
   </section>
 
-  <section class="score_breakdown">
-    <table class="scores">
-      <tbody>
-        <tr ng-repeat="facet in facets"
-            class="score-{{$index}} {{facet.class}}"
-            ng-controller="FacetController">
-          <th scope="row">{{facet.name}}</th>
-          <td><div>
-            <span data-score="{{facet.score}}" style="width: {{width()}}%;" class="enhanced">{{facet.score}}</span>
-          </div></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <a href="#" class="show-all all-scores">
-    <span class="webfont-icon tiptip" data-icon="g"></span>Show more score details
-    </a>
-
-  </section>
+  <span ng-include="'views/reviews/facets.html'"/>
 </section>

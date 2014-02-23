@@ -24,61 +24,40 @@
   </div>
 
   <div class="filters">
-    <span class="filter">
+    <span class="filter" ng-controller="FilterController">
       <span class="label">Reviews from:</span>
       <span class="decorated toggle-dropdown">
-        <a href="#segments">
-          All guests
+        <a ng-click="toggleFilterOptions()">
+          {{filterName}}
         </a>
+        <ol id="segments"
+            class="toggle-dropdown-target"
+            ng-show="showFilterOptions">
+          <li ng-repeat="filter in filters" ng-hide="currentFilter($index)">
+            <a ng-click="selectFilterOption($index)">{{filter.name}}</a>
+          </li>
+        </ol>
       </span>
 
-      <ol id="segments" class="toggle-dropdown-target ">
-        <li class="selected">
-          <a href="/reevoomark/en-GB/product?page=1&amp;retailer=ATL&amp;segment=all&amp;sku=AO103019">All guests</a>
-        </li>
-        <li class="">
-          <a href="/reevoomark/en-GB/product?page=1&amp;retailer=ATL&amp;segment=couple&amp;sku=AO103019">Couple</a>
-        </li>
-        <li class="">
-          <a href="/reevoomark/en-GB/product?page=1&amp;retailer=ATL&amp;segment=family-the-eldest-child-is-at-school&amp;sku=AO103019">Family (the eldest child is at school)</a>
-        </li>
-        <li class="">
-          <a href="/reevoomark/en-GB/product?page=1&amp;retailer=ATL&amp;segment=family-with-only-pre-school-children&amp;sku=AO103019">Family (with only pre-school children)</a>
-        </li>
-        <li class="">
-          <a href="/reevoomark/en-GB/product?page=1&amp;retailer=ATL&amp;segment=friends&amp;sku=AO103019">Friends</a>
-        </li>
-        <li class="">
-          <a href="/reevoomark/en-GB/product?page=1&amp;retailer=ATL&amp;segment=other&amp;sku=AO103019">Other</a>
-        </li>
-      </ol>
     </span>
-    <script> document.getElementById("segments").style.display = 'none'; </script>
 
-    <span class="filter">
+    <span class="filter" ng-controller="SortController">
       <span class="label">Sort by: </span>
       <span class="decorated toggle-dropdown">
-        <a href="#sort-by">
-          Most recent
+        <a ng-click="toggleFilterOptions()">
+          {{filterName}}
         </a>
+
+        <ol id="sort-by"
+            class="toggle-dropdown-target"
+            ng-show="showFilterOptions">
+          <li ng-repeat="filter in filters" ng-hide="currentFilter($index)">
+            <a ng-click="selectFilterOption($index)">{{filter.name}}</a>
+          </li>
+        </ol>
       </span>
     </span>
 
-    <ol id="sort-by" class="toggle-dropdown-target">
-      <li class="selected">
-        <a href="/reevoomark/en-GB/product?page=1&amp;retailer=ATL&amp;sku=AO103019&amp;sort_by=recent">Most recent</a>
-      </li>
-      <li class="">
-        <a href="/reevoomark/en-GB/product?page=1&amp;retailer=ATL&amp;sku=AO103019&amp;sort_by=helpful">Most helpful</a>
-      </li>
-      <li class="">
-        <a href="/reevoomark/en-GB/product?page=1&amp;retailer=ATL&amp;sku=AO103019&amp;sort_by=score_asc">Lowest score</a>
-      </li>
-      <li class="">
-        <a href="/reevoomark/en-GB/product?page=1&amp;retailer=ATL&amp;sku=AO103019&amp;sort_by=score_desc">Highest score</a>
-      </li>
-    </ol>
-    <script> document.getElementById("sort-by").style.display = 'none'; </script>
   </div>
 </header>
 </header>

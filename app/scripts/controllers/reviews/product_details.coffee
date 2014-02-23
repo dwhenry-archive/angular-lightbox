@@ -1,9 +1,11 @@
-'use strict'
+ 'use strict'
 
 angular.module('lightboxApp')
-.controller 'ProductDetailsController', ($scope, Product) ->
+.controller 'ProductDetailsController', ($scope, product) ->
 
-  $scope.product = Product
+  product.for({})
+  .then (productData) ->
+    $scope.product = productData
 
   $scope.facets = [
     {name: 'Location', score: '9.0'},

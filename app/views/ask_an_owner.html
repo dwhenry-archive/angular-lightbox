@@ -1,2 +1,8 @@
 <div ng-include="'views/header.html'">
 </div>
+
+<h1>Sign Up</h1>
+<form name='addUserForm' ng-controller="AddUserController">
+  {{user.name}} says his name is
+  <input ng-model='user.name'>
+<form>

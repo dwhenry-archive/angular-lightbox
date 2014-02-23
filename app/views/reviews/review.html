@@ -1,0 +1,93 @@
+<article id="review_{{review.id}}" lang="en" class="review other-language reevoo_review comment" ng-controller="ReviewController">
+  <section class="overall-scores">
+    <span alt="{{review.overall_score}} out of 10" class="overall_score score-sprite-60 rating" style="background-position:{{image_offset()}}px 0;" title="{{review.overall_score}} out of 10">
+      <span class="value">{{review.overall_score}}</span>
+      <abbr class="best" title="10">out of 10</abbr>
+    </span>
+  </section>
+
+  <section class="review-content">
+    <hgroup class="attribution-container">
+      <h4 class="attribution-name">{{review.first_name}}</h4>
+      <h5 class="attribution-details">
+        <span class="location">
+          {{review.town}}
+        </span>
+        <span class="segment">
+        </span>
+      </h5>
+    </hgroup>
+
+    <div class="translate-link-container">
+      <div class="skiptranslate goog-te-sectional-gadget-link" style="display: none;">
+        <div id=":0.gadgetLink">
+          <a class="goog-te-gadget-link" href="javascript:void(0)">
+            <span class="goog-te-sectional-gadget-link-text">Translate</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <dl>
+      <dt class="general"><label>General comments</label></dt>
+      <dd class="general">A fabulous once in a lifetime experience.</dd>
+    </dl>
+
+    <div class="review-photo-container">
+    </div>
+
+    <div class="review-options">
+      <a class="toggle-score-breakdown tiptip">
+        <span class="webfont-icon" data-icon="g"></span>
+        <span class="hidden">All scores from this user:</span>
+      </a>
+      <span class="vote">
+        <span class="hidden">Was this review helpful?</span>
+
+        <span class="button-collection">
+          <a href="/reevoomark/votes/en-GB/5900317?vote=helpful" class="tiptip" data-method="post" data-remote="true" rel="nofollow">
+            <span class="upvote votes webfont-icon tiptip" data-icon="u">
+            </span>
+            <span class="hidden">This is helpful</span>
+          </a>
+          <a href="/reevoomark/votes/en-GB/5900317?vote=unhelpful" class="tiptip" data-method="post" data-remote="true" rel="nofollow">
+            <span class="downvote votes webfont-icon tiptip" data-icon="d"></span>
+            <span class="hidden">This is unhelpful</span>
+          </a>
+        </span>
+      </span>
+    </div>
+
+
+    <div class="score-breakdown" style="display: none">
+      <div data-review-id="5900317">
+        <table class="scores">
+          <tbody>
+            <tr class="score-0">
+              <th scope="row">Location</th>
+              <td>
+                <div>
+                  <span data-score="10.0" style="width: 100%;" class="enhanced">10.0</span>
+                </div>
+              </td>
+            </tr>
+            <tr class="score-1">
+              <th scope="row">Cleanliness</th>
+              <td>
+                <div>
+                  <span data-score="10.0" style="width: 100%;" class="enhanced">10.0</span>
+                </div>
+              </td>
+            </tr>
+            <tr class="score-2"><th scope="row">Service</th><td><div><span data-score="10.0" style="width: 100%;" class="enhanced">10.0</span></div></td></tr><tr class="score-3"><th scope="row">Food &amp; Beverage</th><td><div><span data-score="10.0" style="width: 100%;" class="enhanced">10.0</span></div></td></tr><tr class="score-4"><th scope="row">Recreation and Water park</th><td><div><span data-score="10.0" style="width: 100%;" class="enhanced">10.0</span></div></td></tr><tr class="value-for-money"><th scope="row">Value for money</th><td><div><span data-score="10.0" style="width: 100%;" class="enhanced">10.0</span></div></td></tr><tr class="overall"><th scope="row">Overall rating</th><td><div><span data-score="10.0" style="width: 100%;" class="enhanced">10.0</span></div></td></tr></tbody></table>
+        </div>
+      </div>
+  </section>
+
+  <section class="purchase_date">
+    Confirmed guest:
+    <span class="date" title="">
+      {{review.sort_and_display_date | date:'dd mmm yyyy'}}
+    </span>
+  </section>
+</article>

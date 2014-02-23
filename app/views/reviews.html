@@ -3,3 +3,7 @@
 
 <div ng-include="'views/reviews/product_details.html'"/>
 <div ng-include="'views/reviews/filters.html'"/>
+
+<div ng-repeat="review in reviews">
+  <span ng-include="'views/reviews/review.html'"/>
+</div>
