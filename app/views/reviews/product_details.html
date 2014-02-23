@@ -7,7 +7,7 @@
       <div class="product-image">
         <img ng-src="{{product.img}}" title="Photo of {{product.name}}" alt="Photo of {{product.name}}">
       </div>
-    <div class="average_score" style="background-position:{{product.score_image_offset}}px 0; background-image: url('http://cdn.images.reevoo.com/en-GB/scores/standard/transparent/110/sprite.png');" title="Score is {{product.overall_score}} out of 10 from {{product.review_count | number:0}} reviews"></div>
+    <div class="average_score" style="background-position:{{score_image_offset()}}px 0; background-image: url('http://cdn.images.reevoo.com/en-GB/scores/standard/transparent/110/sprite.png');" title="Score is {{product.overall_score | number:0}} out of 10 from {{product.review_count | number:0}} reviews"></div>
   </section>
 
   <section class="pros-and-cons">

@@ -6,6 +6,11 @@ angular.module('lightboxApp')
   product.for($scope.options).then (productData) ->
     $scope.product = productData
 
+  $scope.score_image_offset = () ->
+    if $scope.product != undefined
+      score = parseInt($scope.product.overall_score * 10)
+      (score * -110) + (110 * 9)
+
   $scope.facets = [
     {name: 'Location', score: '9.0'},
     {name: 'Cleanliness', score: '9.4'},

@@ -12,7 +12,6 @@ angular.module('lightboxApp')
         data = {
           name: reviewable.summary.parent.reviewable.name,
           img: reviewable.summary.parent.reviewable.image_url.replace(/images.dev/, 'images.reevoo.com'),
-          score_image_offset: _this.image_offset(overall_score),
           overall_score: overall_score,
           review_count: reviewable.summary.locale_and_review_count[_this.locale]
         }
@@ -24,8 +23,6 @@ angular.module('lightboxApp')
       stats = filtered_facets[0].statistics
       stats.summation / stats.respondents
 
-    image_offset: (score) ->
-      (score * -600) + 540
 
 
 
