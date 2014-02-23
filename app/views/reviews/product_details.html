@@ -1,0 +1,35 @@
+<section class="product_details tab-summary" ng-controller="ProductDetailsController">
+  <h1>
+    Reviews of <span class="product_name">{{product.name}}</span>
+  </h1>
+
+  <section class="image-and-score-module">
+      <div class="product-image">
+        <img ng-src="{{product.img}}" title="Photo of {{product.name}}" alt="Photo of {{product.name}}">
+      </div>
+    <div class="average_score" style="background-position:{{product.score_image_offset}} 0; background-image: url('http://cdn.images.reevoo.com/en-GB/scores/standard/transparent/110/sprite.png');" title="Score is {{product.overall_score}} out of 10 from {{product.review_count | number:0}} reviews"></div>
+  </section>
+
+  <section class="pros-and-cons">
+  </section>
+
+  <section class="score_breakdown">
+    <table class="scores">
+      <tbody>
+        <tr ng-repeat="facet in facets"
+            class="score-{{$index}} {{facet.class}}"
+            ng-controller="FacetController">
+          <th scope="row">{{facet.name}}</th>
+          <td><div>
+            <span data-score="{{facet.score}}" style="width: {{width()}}%;" class="enhanced">{{facet.score}}</span>
+          </div></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <a href="#" class="show-all all-scores">
+    <span class="webfont-icon tiptip" data-icon="g"></span>Show more score details
+    </a>
+
+  </section>
+</section>

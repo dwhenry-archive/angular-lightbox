@@ -1,0 +1,21 @@
+<div id="nav-wrapper" ng-controller="HeaderController">
+  <nav class="tabs">
+    <header class="brand">
+      <img src="http://cdn.images.reevoo.com/assets/xx-XX/bg/transparent/West/reevoo_logo/200x40.png" alt="Reevoo" title="Reevoo">
+    </header>
+    <a class="toggle-tab-list" href="#" onclick="$(this).closest('nav').toggleClass('expanded'); $(this).toggleClass('expanded'); return false;">
+      <span>Toggle</span>
+      <span>tab</span>
+      <span>list</span>
+    </a>
+    <ol>
+      <li ng-repeat="lightboxType in lightboxTypes"
+          ng-class="{selected: currentPage($index)}"
+        >
+        <a href="#/{{lightboxType.type}}/locale=en-GB;sku=AO103019;trkref=ATL" data-tab-name="reviews" data-tab="reviews-tab-content" data-tracking-name="product_reviews" id="reviews-tab-content-link">
+          {{lightboxType.name}}
+        </a>
+      </li>
+    </ol>
+  </nav>
+</div>

@@ -1,0 +1,248 @@
+#nav-wrapper {
+  min-height: 43px;
+  border-bottom: 1px solid #ddd;
+  background: white;
+  z-index: 1000;
+  width: 100%;
+  position: fixed;
+  top: 0;
+
+  .tabs {
+    header {
+      display: inline-block;
+      zoom: 1;
+      line-height: 35px;
+      width: 140px;
+
+      img {
+        margin: 11px 21px 0;
+        display: block;
+        width: 100px;
+        height: 20px;
+      }
+    }
+    .toggle-tab-list {
+      display: none;
+    }
+    ol {
+      display: inline-block;
+      zoom: 1;
+      vertical-align: top;
+      margin: 0 auto;
+
+      li {
+        list-style: none;display: table-cell;
+        zoom: 1;
+        line-height: 20px;
+        vertical-align: top;
+        color: #777;
+        border-left: 1px solid #ddd;
+        background: white;
+        max-width: 250px;
+        border-bottom: 1px solid #ddd;
+
+        &.selected {
+          color: #000;
+          background: #eaeaea;
+          border-bottom: 1px solid #eaeaea;
+        }
+
+        a {
+          padding: 12px 20px 12px 20px;
+          text-decoration: none;
+          vertical-align: middle;
+          color: inherit;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.tab-summary {
+  background: #eaeaea;
+  padding: 0;
+  overflow: hidden;
+  zoom: 1;
+  overflow: hidden;
+  padding: 0 20px;
+
+  section {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 10px;
+  }
+
+  section.score_breakdown {
+    width: 50%;
+  }
+
+  section.pros-and-cons {
+    width: 25%;
+  }
+
+  section.score_breakdown a {
+    display: block;
+    text-align: right;
+    color: #999;
+  }
+
+  section.image-and-score-module {
+    div.product-image {
+      width: 90px;
+      height: 90px;
+      padding: 5px;
+      background: #fff;
+      border: 1px solid #ddd;
+      margin: 0 auto;
+      box-sizing: content-box;
+    }
+
+    div.average_score {
+      width: 110px;
+      height: 0;
+      padding-top: 90px;
+      overflow: hidden;
+      background-repeat: no-repeat;
+      margin: 0 auto;
+    }
+
+    width: 110px;
+    overflow: hidden;
+    /* text-align: center; */
+    margin-right: 3%;
+  }
+  table.scores {
+    width: 100%;
+
+    td {
+      padding: 3px 0;
+
+      div {
+        display: block;
+        background: #bbb;
+        width: 100%;
+
+        span {
+          height: 14px;
+          background: #6ec148;
+          padding: 0 2px;
+          text-align: right;
+          color: #fff;
+          display: block;
+          font-weight: bold;
+          font-size: 12px;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+        }
+      }
+    }
+
+    .score-0 td div span, .score-12 td div span { background-color: #b9529e }
+    .score-1 td div span, .score-13 td div span { background-color: #00adee }
+    .score-2 td div span, .score-14 td div span { background-color: #21a029 }
+    .score-3 td div span, .score-15 td div span { background-color: #10ce9e }
+    .score-4 td div span, .score-16 td div span { background-color: #ce6b73 }
+    .score-5 td div span, .score-17 td div span { background-color: #c8a274 }
+    .score-6 td div span, .score-18 td div span { background-color: #9ba156 }
+    .score-7 td div span, .score-19 td div span { background-color: #76ced9 }
+    .score-8 td div span, .score-20 td div span { background-color: #657f97 }
+    .score-9 td div span, .score-21 td div span { background-color: #888 }
+    .score-10 td div span, .score-22 td div span { background-color: #8dc63f }
+    .score-11 td div span, .score-23 td div span { background-color: #84aeab }
+
+    th {
+      text-align: right;
+      font-weight: normal;
+      line-height: 13px;
+      padding: 0 10px 10px 0;
+      width: 35%;
+    }
+  }
+}
+
+.review-filters {
+  clear: both;
+  padding: 5px 20px;
+  vertical-align: middle;
+  position: relative;
+  background: #ddd;
+  color: #666;
+
+  .label {
+    color: #666;
+  }
+
+  .summary {
+    float: left;
+    margin: 0;
+    line-height: 30px;
+  }
+
+  .filters, .review-filters p.region-links {
+    float: right;
+    margin: 0;
+    line-height: 30px;
+    vertical-align: middle;
+  }
+
+  h3 {
+    font-size: 100%;
+  }
+}
+
+#header:after, .review-filters:after, .reviewer-segments:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.toggle-dropdown-target, .tab .toggle-dropdown {
+  border: 1px solid #ddd;
+}
+
+.toggle-dropdown.decorated {
+  background: white;
+  font-weight: inherit;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ie-border-radius: 5px;
+}
+
+.toggle-dropdown.enhanced {
+  display: inline-block;
+  zoom: 1;
+}
+
+.toggle-dropdown {
+  padding: 0 0 0 5px;
+  margin: 0 0 0 -4px;
+  font-size: inherit;
+  display: inline-block;
+  zoom: 1;
+}
+
+.toggle-dropdown a {
+  padding: 4px 20px 4px 0;
+  outline: 0;
+  position: relative;
+  text-decoration: none;
+  color: black;
+}
+
+.toggle-dropdown.enhanced a:after {
+  content: 's';
+  font-family: 'reevoo-icons';
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  line-height: 20px;
+  vertical-align: middle;
+  text-align: center;
+  width: 20px;
+  color: #999;
+}
